@@ -1,0 +1,21 @@
+#pragma once
+
+// Hardware configuration for the turntable test sketch.
+// Adjust these values to match your wiring and mechanics.
+
+inline constexpr uint8_t STEP_X = 2;
+inline constexpr uint8_t DIR_X  = 5;
+inline constexpr int8_t  EN_X   = DEFAULT_ENABLE_PIN;  // set to your enable pin, or -1 if not wired/tied low
+
+// Motor parameters
+inline constexpr uint16_t MOTOR_FULL_STEPS    = 200;   // motor's native steps/rev (without microstepping)
+inline constexpr uint8_t  MOTOR_MICROSTEPPING = 1;     // set to your driver microstep setting
+inline constexpr float    MOTOR_EFFECTIVE_STEPS_PER_REV = MOTOR_FULL_STEPS * MOTOR_MICROSTEPPING;
+
+// Gear ratio: motor turns per one full turn of the table.
+inline constexpr float MOTOR_TO_TURNTABLE_GEAR_RATIO = 2.5f;
+
+// Motion profile for the test sequence
+inline constexpr float    SWEEP_SPEED_DPS    = 45.0f;   // degrees per second at the table
+inline constexpr uint32_t SWEEP_TIMEOUT_MS   = 6000;    // safety timeout per move
+inline constexpr uint32_t SEQUENCE_WAIT_MS   = 5000;    // pause between moves
