@@ -1,4 +1,4 @@
-# Turntable Test
+# Project Dalek by BryTack
 
 A small Arduino turntable experiment I built while learning the basics. This is a fun, personal project for tinkering and practice, not a polished or production-ready build.
 
